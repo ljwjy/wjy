@@ -1,0 +1,51 @@
+type student struct {
+	name  string
+	score int
+}
+/*
+func maxScore(a []student) int {
+	s := 0
+	for x < -a {
+		if a < x.score {
+			s = x.score
+		}
+	}
+	return s.name
+}
+
+func findScore(a []student, name string) (score int, ok bool) {
+	for x <- a {
+		if x.name == name {
+			return x.score, true
+		}
+	}
+	return 0, false
+}
+
+func findScore2(a []student, name string) (score int, ok bool) {
+socre, ok = {x.score for x <- a, x.name == name}
+return
+}
+
+*/
+func hasFailed(a []student) bool {
+return len([x.name for x <- a, x.score<60]) > 0
+}
+
+func hasFailed3(a []student) bool {
+return {for x<-a, x.score<60}
+}
+
+func hasFailed2(a []student) bool {
+_,ok := {0 for x <-a,x.score<60}
+return ok 
+}
+a := [student{"Tom", 10}, student{"Mike", 80}, student{"Mark", 70}]
+/*
+println(s)
+println(findScore(a, "Mike"))
+println(findScore2(a, "Mike"))
+*/
+println(hasFailed2(a))
+println(hasFailed(a))
+println(hasFailed3(a))
